@@ -93,7 +93,8 @@ function setupAudio() {
 }
 
 function playSound(name) {
-    if (audioContext && audioContext.state === 'suspended') {
+    if (!audioContext) return;
+    if (audioContext.state === 'suspended') {
         audioContext.resume();
     }
     if (audioContext && audioBuffers[name]) {
@@ -106,6 +107,11 @@ function playSound(name) {
 
 
 function startGame() {
+    // Resume audio context on user gesture
+    if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     score = 0;
     bearLane = 1;
     bear.position.x = LANES[bearLane];
