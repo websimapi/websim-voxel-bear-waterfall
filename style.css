@@ -9,6 +9,7 @@ body {
     display: block;
     width: 100vw;
     height: 100vh;
+    cursor: pointer;
 }
 
 #ui-container {
@@ -57,6 +58,7 @@ body {
     font-size: clamp(1rem, 3vw, 1.5rem);
     margin: 10px 20px;
     max-width: 80%;
+    line-height: 1.4;
 }
 
 .overlay button {
@@ -75,4 +77,3 @@ body {
 .overlay button:hover {
     transform: scale(1.05);
 }
-
